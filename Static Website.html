@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brightline Studio – Static Website</title>
+<style>
+:root{--bg:#fff;--bg2:#f4f6fb;--tx:#1b2030;--mu:#5d6578;--ac:#4f46e5;--ac2:#fff;--bd:#e2e6f0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12141c;--bg2:#1a1d28;--tx:#eceff6;--mu:#9aa3b8;--ac:#818cf8;--ac2:#12141c;--bd:#2b3042}}
+:root[data-theme="dark"]{--bg:#12141c;--bg2:#1a1d28;--tx:#eceff6;--mu:#9aa3b8;--ac:#818cf8;--ac2:#12141c;--bd:#2b3042}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
+.wrap{max-width:1000px;margin:auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--bd);z-index:10}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;color:var(--ac)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+nav a{color:var(--tx);text-decoration:none;font-size:15px}nav a:hover{color:var(--ac)}
+button{font:inherit;cursor:pointer}
+.ic{background:none;border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:6px 10px}
+#menu{display:none}
+section{padding:70px 0}.alt{background:var(--bg2)}
+h2{font-size:28px;margin:0 0 8px}.sub{color:var(--mu);margin:0 0 30px}
+.hero{text-align:center;padding:100px 0}
+.hero h1{font-size:clamp(32px,6vw,52px);margin:0 0 12px;line-height:1.15}
+.btn{display:inline-block;background:var(--ac);color:var(--ac2);padding:11px 22px;border-radius:10px;text-decoration:none;border:0;font-weight:600}
+.btn.o{background:none;color:var(--ac);border:1px solid var(--ac);margin-left:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:var(--bg);border:1px solid var(--bd);border-radius:14px;padding:20px}
+.alt .card{background:var(--bg)}
+.stats .card{text-align:center}.stats b{font-size:32px;color:var(--ac)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filters button{border:1px solid var(--bd);background:none;color:var(--tx);padding:6px 14px;border-radius:20px}
+.filters button.on{background:var(--ac);color:var(--ac2);border-color:var(--ac)}
+.thumb{height:110px;border-radius:10px;margin-bottom:10px;display:grid;place-items:center;font-size:36px;background:var(--bg2)}
+.hide{display:none}
+details{border:1px solid var(--bd);border-radius:10px;padding:12px 16px;margin-bottom:10px;background:var(--bg)}
+summary{cursor:pointer;font-weight:600}
+form{display:grid;gap:12px;max-width:520px}
+input,textarea{width:100%;padding:11px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.err{color:#d93a3a;font-size:13px;min-height:16px}.ok{color:#1f9d55;font-weight:600}
+footer{border-top:1px solid var(--bd);padding:24px 0;text-align:center;color:var(--mu);font-size:14px}
+.rev{opacity:0;transform:translateY(20px);transition:.6s}.rev.in{opacity:1;transform:none}
+#top{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));display:none}
+@media(max-width:700px){#menu{display:block}nav ul{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--bd)}nav ul.open{display:flex}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<span class="logo">Brightline</span>
+<ul id="links"><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
+<span><button class="ic" id="theme" aria-label="Toggle theme">🌓</button> <button class="ic" id="menu" aria-label="Menu">☰</button></span>
+</nav></div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+<h1>We design simple, fast websites</h1>
+<p class="sub">A static website demo with navigation, theme toggle, filters, FAQ and a contact form.</p>
+<a class="btn" href="#contact">Get in touch</a><a class="btn o" href="#work">See our work</a>
+</div></section>
+
+<section id="about" class="alt"><div class="wrap rev">
+<h2>About us</h2><p class="sub">A small team that loves clean code and good design.</p>
+<div class="grid stats">
+<div class="card"><b data-n="120">0</b><div>Projects</div></div>
+<div class="card"><b data-n="45">0</b><div>Clients</div></div>
+<div class="card"><b data-n="8">0</b><div>Years</div></div>
+<div class="card"><b data-n="12">0</b><div>Awards</div></div>
+</div></div></section>
+
+<section id="services"><div class="wrap rev">
+<h2>Services</h2><p class="sub">What we can do for you.</p>
+<div class="grid">
+<div class="card"><h3>🎨 UI Design</h3><p>Clean layouts that look great on every screen.</p></div>
+<div class="card"><h3>💻 Web Development</h3><p>Hand-coded HTML, CSS and JavaScript.</p></div>
+<div class="card"><h3>🚀 Performance</h3><p>Pages that load fast and rank well.</p></div>
+</div></div></section>
+
+<section id="work" class="alt"><div class="wrap rev">
+<h2>Our work</h2><p class="sub">Filter projects by category.</p>
+<div class="filters" id="filters">
+<button class="on" data-f="all">All</button><button data-f="web">Web</button><button data-f="app">App</button><button data-f="brand">Brand</button>
+</div>
+<div class="grid" id="items">
+<div class="card" data-c="web"><div class="thumb">🌐</div><b>Cafe Website</b><div class="sub">Web</div></div>
+<div class="card" data-c="app"><div class="thumb">📱</div><b>Fitness Tracker</b><div class="sub">App</div></div>
+<div class="card" data-c="brand"><div class="thumb">✨</div><b>Logo Pack</b><div class="sub">Brand</div></div>
+<div class="card" data-c="web"><div class="thumb">🛍️</div><b>Shop Landing Page</b><div class="sub">Web</div></div>
+</div></div></section>
+
+<section id="reviews"><div class="wrap rev">
+<h2>What clients say</h2><p class="sub">Tap the arrows to browse.</p>
+<div class="card" style="max-width:560px"><p id="q" style="font-size:18px"></p><b id="who"></b>
+<div style="margin-top:14px"><button class="ic" id="prev">←</button> <button class="ic" id="next">→</button></div></div>
+</div></section>
+
+<section id="faq" class="alt"><div class="wrap rev">
+<h2>FAQ</h2><p class="sub">Common questions.</p>
+<details><summary>How long does a website take?</summary><p>Usually two to four weeks, depending on size.</p></details>
+<details><summary>Will it work on mobile?</summary><p>Yes, every site is fully responsive.</p></details>
+<details><summary>Can I edit it later?</summary><p>Yes, we hand over clean, documented code.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap rev">
+<h2>Contact</h2><p class="sub">Send us a message.</p>
+<form id="f" novalidate>
+<div><input id="n" placeholder="Your name"><div class="err" id="en"></div></div>
+<div><input id="e" type="email" placeholder="Email address"><div class="err" id="ee"></div></div>
+<div><textarea id="m" rows="4" placeholder="Message"></textarea><div class="err" id="em"></div></div>
+<button class="btn" type="submit">Send message</button>
+<div class="ok" id="done"></div>
+</form></div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Brightline Studio · Built with HTML, CSS and JavaScript</div></footer>
+<button class="btn" id="top" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},R=document.documentElement;
+// theme
+try{var t=localStorage.getItem('theme');if(t)R.setAttribute('data-theme',t)}catch(e){}
+$('#theme').onclick=function(){
+  var dark=R.getAttribute('data-theme')==='dark'||(!R.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);
+  var n=dark?'light':'dark';R.setAttribute('data-theme',n);
+  try{localStorage.setItem('theme',n)}catch(e){}
+};
+// mobile menu
+$('#menu').onclick=function(){$('#links').classList.toggle('open')};
+document.querySelectorAll('#links a').forEach(function(a){a.onclick=function(){$('#links').classList.remove('open')}});
+// filters
+$('#filters').onclick=function(ev){
+  var b=ev.target.closest('button');if(!b)return;
+  document.querySelectorAll('#filters button').forEach(function(x){x.classList.toggle('on',x===b)});
+  document.querySelectorAll('#items .card').forEach(function(c){c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.c!==b.dataset.f)});
+};
+// testimonials
+var T=[["Fast, clean and exactly what we asked for.","Ayesha K."],["Our traffic doubled after the redesign.","Bilal R."],["Great communication from start to finish.","Sara M."]],i=0;
+function show(){$('#q').textContent='“'+T[i][0]+'”';$('#who').textContent='— '+T[i][1]}
+$('#prev').onclick=function(){i=(i+T.length-1)%T.length;show()};
+$('#next').onclick=function(){i=(i+1)%T.length;show()};show();
+// scroll reveal + counters
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
+  e.target.querySelectorAll('[data-n]').forEach(count)}})},{threshold:.15});
+document.querySelectorAll('.rev').forEach(function(x){io.observe(x)});
+function count(el){var n=+el.dataset.n,c=0,s=Math.max(1,Math.round(n/40));var id=setInterval(function(){c+=s;if(c>=n){c=n;clearInterval(id)}el.textContent=c},30)}
+// back to top
+addEventListener('scroll',function(){$('#top').style.display=scrollY>400?'block':'none'});
+$('#top').onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+// form validation
+$('#f').onsubmit=function(ev){
+  ev.preventDefault();var ok=true;
+  function chk(id,er,bad,msg){$(er).textContent=bad?msg:'';if(bad)ok=false}
+  chk('#n','#en',$('#n').value.trim().length<2,'Please enter your name.');
+  chk('#e','#ee',!/^\S+@\S+\.\S+$/.test($('#e').value),'Please enter a valid email.');
+  chk('#m','#em',$('#m').value.trim().length<10,'Message must be at least 10 characters.');
+  $('#done').textContent=ok?'Thanks! Your message is ready to send (demo only).':'';
+  if(ok)$('#f').reset();
+};
+})();
+</script>
+</body>
+</html>
